@@ -1,8 +1,8 @@
 {
-  "name": "Injecta",
+  "name": "Inject Date",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Injecting Date",
+  "description": "Injecting a custom Date",
   "homepage_url": "http://ivanstorck.com",
   "background": {
     "scripts": [
