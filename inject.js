@@ -2,10 +2,22 @@
 
 (function() {
 
-  const newDate = new Date(2020, 8, 16)
+  const year = 2020;
+  const monthZeroBased = 8;
+  const day = 16;
+  const newDate = new Date(year, monthZeroBased, day)
   const overrideDate = (new Date('2020-04-01T01:00:00')).getTime();
-  Date = undefined
-  Date = function() { return newDate }
+
+  Date = class extends Date {
+    constructor(...options) {
+      if (options.length) {
+        super(...options);
+      } else {
+        super(year, monthZeroBased, day);
+      }
+    }
+  };
+
   Date.prototype.getTime = function() { return overrideDate };
 
   // just place a div at top right
